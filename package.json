@@ -5,7 +5,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack --mode production --progress"
+    "build": "webpack --mode production --progress",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "react-18",
@@ -20,6 +22,7 @@
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
+    "gh-pages": "^4.0.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
