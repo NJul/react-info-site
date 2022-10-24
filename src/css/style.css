@@ -4,9 +4,12 @@
   box-sizing: border-box;
 }
 
+/* Reset styles */
+
 ul[class],
 ol[class] {
   padding: 0;
+  list-style: none;
 }
 
 body,
@@ -15,8 +18,8 @@ h2,
 h3,
 h4,
 p,
-ul,
-ol,
+ul[class],
+ol[class],
 li,
 figure,
 figcaption,
@@ -26,11 +29,6 @@ dd {
   margin: 0;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
 input,
 button,
 textarea,
@@ -38,11 +36,24 @@ select {
   font: inherit;
 }
 
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* / Reset styles */
+
 body {
   min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  background-color: rgb(82, 181, 211);
 }
 
 .container {
@@ -50,10 +61,120 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 10px;
-  background-color: rgb(82, 181, 211);
 }
 
-.sun {
-  max-width: 150px;
+/* Header */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  width: 150px;
+  max-width: 80%;
   margin: 2%;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  margin: 0 0 0 10px;
+  padding: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.header-title {
+  align-self: end;
+  font-weight: 200;
+}
+
+/* / Header */
+
+/* nav, image decoration */
+
+.image-wrap {
+  margin: 4px 0 10px 10px;
+}
+
+.morphing-glowing .image-wrap,
+.morphing-glowing .nav-item {
+  transition: 1s;
+  border-radius: 20px;
+}
+
+.morphing-glowing .image-wrap:hover,
+.morphing-glowing .nav-item:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 1);
+  border-radius: 60em;
+}
+
+.image-news-1 {
+  float: right;
+  width: 100px;
+  height: 100px;
+  background: url('../images/pexels-photo-1.webp') no-repeat;
+  background-position: -607px -483px;
+}
+
+.image-news-2 {
+  float: right;
+  width: 100px;
+  height: 100px;
+  background: url('../images/sun-2.jpg') no-repeat;
+  background-position: -255px -170px;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+/* / nav, image decoration */
+
+/* MainContent */
+
+.main-title {
+  margin-top: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.main-text {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+/* / MainContent */
+
+/* Footer */
+
+.footer-text {
+  padding: 10px;
+  font-weight: 200;
+  text-align: center;
+}
+
+/* / Footer */
+
+@media (max-width: 469px) {
+  .nav {
+    justify-content: space-around;
+  }
+
+  .header-title {
+    padding: 10px 0;
+    align-self: center;
+  }
 }
